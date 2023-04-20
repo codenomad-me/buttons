@@ -1,0 +1,87 @@
+/* --- Google Fonts - Poppins --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --search-bar-height: 5rem;
+    --search-bar-width: 5rem;
+    --search-bar-border-radius: calc(0.5*var(--search-bar-height));
+    --search-bar-icon-width: var(--search-bar-height);
+    --search-bar-text-width: calc(var(--search-bar-width)*2);
+
+    --theme-color-1: #41E5B7;
+    --theme-color-2: #2F4FD9;
+}
+/* --- Base styling --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(135deg, var(--theme-color-1), var(--theme-color-2));
+}
+
+/* --- Search Bar ---*/
+.search-bar {
+    height: var(--search-bar-height);
+    width: var(--search-bar-width);
+    background-color: white;
+    border-radius: var(--search-bar-border-radius) var(--search-bar-border-radius) 0 var(--search-bar-border-radius);
+    opacity: 0.5;
+    transition: .4s;
+    z-index: 1;
+}
+
+/* --- Search Icon in Search Bar ---*/
+.search-bar > .search-bar-icon {
+    display: block;
+    position: relative;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: var(--search-bar-icon-width);
+    height: var(--search-bar-height);
+    opacity: 1;
+}
+
+/* --- Textbox in Search Bar ---*/
+.search-bar > .search-bar-textbox {
+    display: block;
+    position: relative;
+    top: calc(-1*var(--search-bar-height));
+    width: var(--search-bar-text-width);
+    height: var(--search-bar-height);
+    border: none;
+    border-radius: var(--search-bar-border-radius);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    text-align: left;
+    font-weight: 400;
+    padding-left: 10.5rem;
+
+    opacity: 0;
+    transition: .4s;
+    z-index: -1;
+}
+
+/* --- Search Bar Mouse Hover Effect  ---*/
+.search-bar:hover {
+    border-radius: var(--search-bar-border-radius) 0 0 var(--search-bar-border-radius);
+    transform: translate(-10rem, 0rem) scale(2);
+    transition: .4s;
+    text-align: center;
+}
+
+/* --- Search Bar TextBox Mouse Hover Effect  ---*/
+.search-bar:hover > .search-bar-textbox {
+    padding-left: 0.5rem;
+    transform: translate(5rem,0rem);
+    border-radius: 0 var(--search-bar-border-radius) var(--search-bar-border-radius) 0;
+    opacity: 1;
+    transition: .4s;
+}
