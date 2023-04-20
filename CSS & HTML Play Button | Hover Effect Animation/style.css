@@ -1,0 +1,68 @@
+/* --- Google Fonts - Kodchasan --- */
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+    --theme-color-1: #8E93FF;
+    --theme-color-2: #C8CDFF;
+    --theme-color-3: #E2E5FF;
+}
+
+/* --- Base styling --- */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--theme-color-2);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* --- Button --- */
+.button {
+    position: relative;
+    background-color: var(--theme-color-1);
+    font-family: 'Kodchasan', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--theme-color-3);
+    padding: 1rem 2.5rem;
+    border-radius: 3rem;
+    border: none;
+    transition: .4s;
+    transform: scale(2);
+}
+
+/* --- Button Text --- */
+.button > .button_text {
+    position: relative;
+    z-index: 10;
+}
+
+/* --- Button Icon --- */
+.button > .button_icon {
+    position: absolute;
+    right: -30px;
+    top: 6px;
+    margin: 0 auto;
+    pointer-events: none;
+    transition: .6s;
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/* --- Mouse Hover Effect of Button --- */
+.button:hover {
+    transform:  scale(2.4);
+    box-shadow: 0px 2px 50px 2px var(--theme-color-3);
+}
+
+/* --- Mouse Hover Effect of Button Icon--- */
+.button:hover > .button_icon {
+    opacity: 1;
+    transform: translate(-30px, 0px) scale(0.5);
+}
